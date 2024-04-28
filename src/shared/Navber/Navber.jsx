@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 const Navber = () => {
   return (
     <div className="navbar p-0  flex items-center justify-between">
-        <div className="w-[300px] mx-auto">
+      {/* search form */}
+      <div className="w-[100px] md:w-[300px] mx-auto">
         <form className="w-full">
           <label
             for="default-search"
@@ -26,12 +27,14 @@ const Navber = () => {
             />
           </div>
         </form>
-        </div>
+      </div>
 
+    {/* navber right side content */}
       <div className="flex items-center gap-0 md:gap-6 mr-0 md:mr-5">
-      <Link className="text-2xl">
-              <IoIosNotifications />
-            </Link>
+        <Link className="text-2xl relative">
+          <IoIosNotifications />
+          <div className="absolute w-2 h-2 rounded-full  bg-red-600 top-0 right-0"></div>
+        </Link>
         <ul className="menu menu-horizontal ">
           <li>
             <details>
@@ -55,10 +58,9 @@ const Navber = () => {
           </li>
         </ul>
         <Link className="text-xl">
-              <IoSettings />
-            </Link>
+          <IoSettings />
+        </Link>
       </div>
- 
     </div>
   );
 };

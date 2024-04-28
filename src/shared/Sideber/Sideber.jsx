@@ -8,8 +8,9 @@ import favIcon from "../../assets/logo/favicon.ico";
 import { FaBars } from "react-icons/fa";
 
 const SidebarItem = ({ icon, text, isToggle, isHover, path }) => {
+  // list style controler
   return (
-    <li>
+    <li className="hover:bg-gray-200 p-2 rounded-md">
       <NavLink to={path} className="flex items-center gap-2">
         {icon({ className: `text-4xl bg-primary text-white p-2 rounded-md ${isToggle ? "block" : ""}` })}
         <span className={`${isToggle || isHover ? "block" : "hidden"}`}>
@@ -22,16 +23,18 @@ const SidebarItem = ({ icon, text, isToggle, isHover, path }) => {
 
 const Sideber = ({ isToggle, isHover, setIsToggle }) => {
   return (
-    <div className="p-5">
-      <div className="flex w-full justify-between">
+    <div className="p-2 z-50">
+      {/* company name and bars */}
+      <div className="flex w-full justify-between pl-3">
       <img
-        src={!isToggle ? favIcon : logo}
-        className={`${!isToggle ? "w-10" : "w-24"}`}
+        src={isToggle || isHover ? logo : favIcon}
+        className={`${isToggle || isHover ? "w-24" : "w-10"}`}
         alt="Logo"
       />
       <button className="text-2xl block md:hidden" onClick={()=>setIsToggle(false)}><FaBars/></button>
       </div>
-      <ul className="mt-10 flex flex-col gap-3 text-[18px] font-semibold">
+      {/* list */}
+      <ul className="mt-10 flex flex-col gap-1 text-[18px] font-semibold">
         <SidebarItem
           path={"/dashboard"}
           icon={CgProfile}

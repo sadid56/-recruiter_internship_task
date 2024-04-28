@@ -4,6 +4,7 @@ import Profile from "../pages/Dashboard/Profile/Profile";
 import DashboardLayout from "../pages/Dashboard/DashboardLayout/DashboardLayout";
 import Invoices from "../pages/Dashboard/Invoices/Invoices";
 import Reports from "../pages/Dashboard/Reports/Reports";
+import EditeProfile from "../Components/EditProfile/EditeProfile";
 
 
 const Router = createBrowserRouter([
@@ -26,6 +27,10 @@ const Router = createBrowserRouter([
             {
                 path:"/dashboard/reports",
                 element: <Reports/>
+            },
+            {
+                path:"/dashboard/edit-profile",
+                element:<EditeProfile/>
             }
         ]
     }
