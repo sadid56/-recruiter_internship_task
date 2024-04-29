@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Amoxicillin",
+        "shortcut": "AMX",
+        "commercial_name": "Amoxil"
+    },
+    {
+        "id": 2,
+        "name": "Cephalexin",
+        "shortcut": "CPX",
+        "commercial_name": "Keflex"
+    },
+    {
+        "id": 3,
+        "name": "Azithromycin",
+        "shortcut": "AZM",
+        "commercial_name": "Zithromax"
+    },
+    {
+        "id": 4,
+        "name": "Doxycycline",
+        "shortcut": "DOX",
+        "commercial_name": "Vibramycin"
+    },
+    {
+        "id": 5,
+        "name": "Ciprofloxacin",
+        "shortcut": "CIP",
+        "commercial_name": "Cipro"
+    },
+    {
+        "id": 6,
+        "name": "Clindamycin",
+        "shortcut": "CLN",
+        "commercial_name": "Cleocin"
+    },
+    {
+        "id": 7,
+        "name": "Trimethoprim/Sulfamethoxazole",
+        "shortcut": "TMP/SMX",
+        "commercial_name": "Bactrim"
+    },
+    {
+        "id": 8,
+        "name": "Metronidazole",
+        "shortcut": "MTZ",
+        "commercial_name": "Flagyl"
+    },
+    {
+        "id": 9,
+        "name": "Penicillin",
+        "shortcut": "PEN",
+        "commercial_name": "Benzylpenicillin"
+    },
+    {
+        "id": 10,
+        "name": "Vancomycin",
+        "shortcut": "VAN",
+        "commercial_name": "Vancocin"
+    }
+]
