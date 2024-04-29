@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "sample_type": "Blood Culture",
+        "price": 80.00,
+        "name": "Blood Culture Test"
+    },
+    {
+        "id": 2,
+        "sample_type": "Urine Culture",
+        "price": 50.00,
+        "name": "Urine Culture Test"
+    },
+    {
+        "id": 3,
+        "sample_type": "Stool Culture",
+        "price": 60.00,
+        "name": "Stool Culture Test"
+    },
+    {
+        "id": 4,
+        "sample_type": "Throat Swab Culture",
+        "price": 45.00,
+        "name": "Throat Swab Culture Test"
+    },
+    {
+        "id": 5,
+        "sample_type": "Nasal Swab Culture",
+        "price": 40.00,
+        "name": "Nasal Swab Culture Test"
+    },
+    {
+        "id": 6,
+        "sample_type": "Wound Culture",
+        "price": 55.00,
+        "name": "Wound Culture Test"
+    },
+    {
+        "id": 7,
+        "sample_type": "Sputum Culture",
+        "price": 65.00,
+        "name": "Sputum Culture Test"
+    },
+    {
+        "id": 8,
+        "sample_type": "CSF Culture",
+        "price": 70.00,
+        "name": "Cerebrospinal Fluid (CSF) Culture Test"
+    },
+    {
+        "id": 9,
+        "sample_type": "Ear Swab Culture",
+        "price": 45.00,
+        "name": "Ear Swab Culture Test"
+    },
+    {
+        "id": 10,
+        "sample_type": "Eye Swab Culture",
+        "price": 45.00,
+        "name": "Eye Swab Culture Test"
+    }
+]

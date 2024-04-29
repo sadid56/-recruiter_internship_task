@@ -18,7 +18,6 @@ const EditBranch = () => {
   ];
     return (
         <div className="mx-5">
-
         {/* branch details */}
       <ul className="shadow-md p-4 w-full mt-5 space-y-1 rounded-md">
         {BranchData.map((item, index) => (

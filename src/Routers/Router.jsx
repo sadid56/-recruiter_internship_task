@@ -15,6 +15,9 @@ import EditBranch from "../Components/EditeBranch/EditBranch";
 import Tests from "../pages/Dashboard/Tests/Tests";
 import CreateTest from "../Components/CreateTest/CreateTest";
 import UpdateTest from "../Components/UpdateTest/UpdateTest";
+import Cultures from "../pages/Dashboard/Cultures/Cultures";
+import CreateCulture from "../Components/CreateCulture/CreateCulture";
+import EditCulture from "../Components/EditCulture/EditCulture";
 
 
 const Router = createBrowserRouter([
@@ -133,6 +136,32 @@ const Router = createBrowserRouter([
                       })
                       .catch(error => {
                         console.error('Error fetching tests:', error);
+                        return null; 
+                      });
+                  }
+              }
+              ,
+              {
+                path:"/dashboard/cultures",
+                element: <Cultures/>
+              },
+              {
+                path:"/dashboard/create-culture",
+                element:<CreateCulture/>
+              },
+              {
+                path:"/dashboard/edit-culture/:name",
+                element: <EditCulture/>,
+                loader: ({ params }) => {
+                    // Fetch the JSON data
+                    return fetch(`/cultures.json`)
+                      .then(response => response.json())
+                      .then(data => {
+                        const culture = data.find(culture => culture.name === params.name);
+                        return culture;
+                      })
+                      .catch(error => {
+                        console.error('Error fetching culture:', error);
                         return null; 
                       });
                   }
