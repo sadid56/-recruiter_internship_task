@@ -12,6 +12,9 @@ import CreateReport from "../Components/CreateReport/CreateReport";
 import Branches from "../pages/Dashboard/Branches/Branches";
 import CreateBranch from "../Components/CreateBranch/CreateBranch";
 import EditBranch from "../Components/EditeBranch/EditBranch";
+import Tests from "../pages/Dashboard/Tests/Tests";
+import CreateTest from "../Components/CreateTest/CreateTest";
+import UpdateTest from "../Components/UpdateTest/UpdateTest";
 
 
 const Router = createBrowserRouter([
@@ -108,6 +111,31 @@ const Router = createBrowserRouter([
                     });
                 }
 
+              },
+              {
+                path:"/dashboard/tests",
+                element: <Tests/>
+              },
+              {
+                path:"/dashboard/create-test",
+                element:<CreateTest/>
+              },
+              {
+                path:"/dashboard/edit-test/:test_name",
+                element: <UpdateTest/>,
+                loader: ({ params }) => {
+                    // Fetch the JSON data
+                    return fetch(`/tests.json`)
+                      .then(response => response.json())
+                      .then(data => {
+                        const tests = data.find(tests => tests.test_name === params.test_name);
+                        return tests;
+                      })
+                      .catch(error => {
+                        console.error('Error fetching tests:', error);
+                        return null; 
+                      });
+                  }
               }
               
         ]

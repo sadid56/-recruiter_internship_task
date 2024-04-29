@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "test_name": "Blood Glucose Test",
+        "price": 25.00
+    },
+    {
+        "id": 2,
+        "test_name": "Complete Blood Count (CBC)",
+        "price": 40.00
+    },
+    {
+        "id": 3,
+        "test_name": "Urinalysis",
+        "price": 30.00
+    },
+    {
+        "id": 4,
+        "test_name": "Cholesterol Test",
+        "price": 35.00
+    },
+    {
+        "id": 5,
+        "test_name": "Thyroid Function Test",
+        "price": 50.00
+    },
+    {
+        "id": 6,
+        "test_name": "Electrocardiogram (ECG/EKG)",
+        "price": 60.00
+    },
+    {
+        "id": 7,
+        "test_name": "MRI Scan",
+        "price": 300.00
+    },
+    {
+        "id": 8,
+        "test_name": "X-Ray",
+        "price": 80.00
+    },
+    {
+        "id": 9,
+        "test_name": "Stool Culture",
+        "price": 45.00
+    },
+    {
+        "id": 10,
+        "test_name": "Pap Smear",
+        "price": 55.00
+    }
+]
