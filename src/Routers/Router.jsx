@@ -18,6 +18,9 @@ import UpdateTest from "../Components/UpdateTest/UpdateTest";
 import Cultures from "../pages/Dashboard/Cultures/Cultures";
 import CreateCulture from "../Components/CreateCulture/CreateCulture";
 import EditCulture from "../Components/EditCulture/EditCulture";
+import CultureOptions from "../pages/Dashboard/CultureOptions/CultureOptions";
+import CreateCultureOptoin from "../Components/CreateCultureOption/CreateCultureOptoin";
+import UpdateCultureOption from "../Components/UpdateCultureOption/UpdateCultureOption";
 
 
 const Router = createBrowserRouter([
@@ -155,6 +158,31 @@ const Router = createBrowserRouter([
                 loader: ({ params }) => {
                     // Fetch the JSON data
                     return fetch(`/cultures.json`)
+                      .then(response => response.json())
+                      .then(data => {
+                        const culture = data.find(culture => culture.name === params.name);
+                        return culture;
+                      })
+                      .catch(error => {
+                        console.error('Error fetching culture:', error);
+                        return null; 
+                      });
+                  }
+              },
+              {
+                path:"/dashboard/culture-options",
+                element:<CultureOptions/>
+              },
+              {
+                path:'/dashboard/create-culture-option',
+                element:<CreateCultureOptoin/>
+              },
+              {
+                path:"/dashboard/edit-culture-option/:name",
+                element: <UpdateCultureOption/>,
+                loader: ({ params }) => {
+                    // Fetch the JSON data
+                    return fetch(`/culture-option.json`)
                       .then(response => response.json())
                       .then(data => {
                         const culture = data.find(culture => culture.name === params.name);

@@ -95,7 +95,7 @@ const Sideber = ({ isToggle, isHover, setIsToggle }) => {
           isHover={isHover}
         />
         <SidebarItem
-          path={"/dashboard/culture-opions"}
+          path={"/dashboard/culture-options"}
           icon={RiTestTubeFill}
           text="Culture Opotions"
           isToggle={isToggle}

@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "Gram Stain"
+    },
+    {
+        "id": 2,
+        "name": "Acid-fast Stain"
+    },
+    {
+        "id": 3,
+        "name": "Methenamine Silver Stain"
+    },
+    {
+        "id": 4,
+        "name": "India Ink Stain"
+    },
+    {
+        "id": 5,
+        "name": "Ziehl-Neelsen Stain"
+    },
+    {
+        "id": 6,
+        "name": "Periodic Acid-Schiff (PAS) Stain"
+    },
+    {
+        "id": 7,
+        "name": "Hematoxylin and Eosin (H&E) Stain"
+    },
+    {
+        "id": 8,
+        "name": "Wright-Giemsa Stain"
+    },
+    {
+        "id": 9,
+        "name": "Crystal Violet Stain"
+    },
+    {
+        "id": 10,
+        "name": "Safranin Stain"
+    }
+]
