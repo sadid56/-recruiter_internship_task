@@ -2,10 +2,11 @@
 // Sideber.js
 import { NavLink } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
-import { TbFileInvoice, TbReportSearch } from "react-icons/tb";
+import { TbReportSearch } from "react-icons/tb";
 import logo from "../../assets/logo/logo-dark.png";
 import favIcon from "../../assets/logo/favicon.ico";
 import { FaBars } from "react-icons/fa";
+import { BsStack } from "react-icons/bs";
 
 const SidebarItem = ({ icon, text, isToggle, isHover, path }) => {
   // list style controler
@@ -44,7 +45,7 @@ const Sideber = ({ isToggle, isHover, setIsToggle }) => {
         />
         <SidebarItem
           path={"/dashboard/invoices"}
-          icon={TbFileInvoice}
+          icon={BsStack}
           text="Invoices"
           isToggle={isToggle}
           isHover={isHover}

@@ -1,0 +1,103 @@
+[
+    {
+      "id": "INV001",
+      "name": "Invoice 001",
+      "discount": 10,
+      "total": 500,
+      "paid": 400,
+      "date": "2024-04-01",
+      "status": "Success",
+      "client_name": "John Doe"
+    },
+    {
+      "id": "INV002",
+      "name": "Invoice 002",
+      "discount": 5,
+      "total": 700,
+      "paid": 700,
+      "date": "2024-04-02",
+      "status": "Success",
+      "client_name": "Alice Smith"
+    },
+    {
+      "id": "INV003",
+      "name": "Invoice 003",
+      "discount": 0,
+      "total": 1000,
+      "paid": 800,
+      "date": "2024-04-03",
+      "status": "Pending",
+      "client_name": "Bob Johnson"
+    },
+    {
+      "id": "INV004",
+      "name": "Invoice 004",
+      "discount": 15,
+      "total": 1200,
+      "paid": 1200,
+      "date": "2024-04-04",
+      "status": "Success",
+      "client_name": "Emily Wilson"
+    },
+    {
+      "id": "INV005",
+      "name": "Invoice 005",
+      "discount": 20,
+      "total": 1500,
+      "paid": 1400,
+      "date": "2024-04-05",
+      "status": "Pending",
+      "client_name": "David Brown"
+    },
+    {
+      "id": "INV006",
+      "name": "Invoice 006",
+      "discount": 8,
+      "total": 800,
+      "paid": 750,
+      "date": "2024-04-06",
+      "status": "Success",
+      "client_name": "Emma White"
+    },
+    {
+      "id": "INV007",
+      "name": "Invoice 007",
+      "discount": 0,
+      "total": 2000,
+      "paid": 2000,
+      "date": "2024-04-07",
+      "status": "Success",
+      "client_name": "Michael Johnson"
+    },
+    {
+      "id": "INV008",
+      "name": "Invoice 008",
+      "discount": 12,
+      "total": 1800,
+      "paid": 1700,
+      "date": "2024-04-08",
+      "status": "Pending",
+      "client_name": "Olivia Brown"
+    },
+    {
+      "id": "INV009",
+      "name": "Invoice 009",
+      "discount": 5,
+      "total": 300,
+      "paid": 300,
+      "date": "2024-04-09",
+      "status": "Success",
+      "client_name": "Sophia Johnson"
+    },
+    {
+      "id": "INV010",
+      "name": "Invoice 010",
+      "discount": 10,
+      "total": 2500,
+      "paid": 2000,
+      "date": "2024-04-10",
+      "status": "Pending",
+      "client_name": "Daniel Smith"
+    }
+  ]
+  
