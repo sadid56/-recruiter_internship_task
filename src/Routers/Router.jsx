@@ -9,6 +9,9 @@ import InvoiceEdite from "../Components/InvoiceEdite/InvoiceEdite";
 import CreateInvoices from "../Components/CreateInvoices/CreateInvoices";
 import EditeReports from "../Components/EditeReports/EditeReports";
 import CreateReport from "../Components/CreateReport/CreateReport";
+import Branches from "../pages/Dashboard/Branches/Branches";
+import CreateBranch from "../Components/CreateBranch/CreateBranch";
+import EditBranch from "../Components/EditeBranch/EditBranch";
 
 
 const Router = createBrowserRouter([
@@ -79,6 +82,32 @@ const Router = createBrowserRouter([
               {
                 path:"/dashboard/create-report",
                 element:<CreateReport/>
+              },
+              {
+                path:"/dashboard/branches",
+                element: <Branches/>
+              },
+              {
+                path:"/dashboard/create-branch",
+                element: <CreateBranch/>
+              },
+              {
+                path: "/dashboard/edit-branch/:country",
+                element: <EditBranch/>,
+                loader: ({ params }) => {
+                  // Fetch the JSON data
+                  return fetch(`/branches.json`)
+                    .then(response => response.json())
+                    .then(data => {
+                      const country = data.find(country => country.country === params.country);
+                      return country;
+                    })
+                    .catch(error => {
+                      console.error('Error fetching country:', error);
+                      return null; 
+                    });
+                }
+
               }
               
         ]

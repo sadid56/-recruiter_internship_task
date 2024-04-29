@@ -26,9 +26,9 @@ const DashboardLayout = () => {
       // style={{boxShadow:"0px 0px 20px "}}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className={`bg-white shadow-md min-h-screen z-10 ${
+        className={`bg-white shadow-md h-screen overflow-y-auto block fixed md:sticky top-0 ${
           isToggle || isHover
-            ? "w-64 block fixed md:sticky"
+            ? "w-80 "
             : " w-fit hidden md:block  left-0 transition-all duration-300"
         } `}
       >
@@ -36,7 +36,7 @@ const DashboardLayout = () => {
       </div>
       <div className={`border min-h-screen w-full bg-[#f4f0f0]`}>
         {/* navber */}
-        <nav className="flex z-50 bg-white justify-between px-3 shadow-md">
+        <nav className="flex sticky top-0 z-50 bg-white justify-between px-3 shadow-md">
           <button className={`text-2xl`} onClick={()=> setIsToggle(!isToggle)}>
             <FaBars />
           </button>

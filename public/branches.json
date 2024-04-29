@@ -1,0 +1,73 @@
+[
+    {
+      "id": 1,
+      "country": "United States",
+      "city": "New York",
+      "country_code": "US",
+      "branch_name": "New York Main Branch"
+    },
+    {
+      "id": 2,
+      "country": "United Kingdom",
+      "city": "London",
+      "country_code": "UK",
+      "branch_name": "London Central Branch"
+    },
+    {
+      "id": 3,
+      "country": "Canada",
+      "city": "Toronto",
+      "country_code": "CA",
+      "branch_name": "Toronto Downtown Branch"
+    },
+    {
+      "id": 4,
+      "country": "Germany",
+      "city": "Berlin",
+      "country_code": "DE",
+      "branch_name": "Berlin City Branch"
+    },
+    {
+      "id": 5,
+      "country": "France",
+      "city": "Paris",
+      "country_code": "FR",
+      "branch_name": "Paris Central Branch"
+    },
+    {
+      "id": 6,
+      "country": "Australia",
+      "city": "Sydney",
+      "country_code": "AU",
+      "branch_name": "Sydney Harbour Branch"
+    },
+    {
+      "id": 7,
+      "country": "Japan",
+      "city": "Tokyo",
+      "country_code": "JP",
+      "branch_name": "Tokyo Central Branch"
+    },
+    {
+      "id": 8,
+      "country": "Brazil",
+      "city": "Rio de Janeiro",
+      "country_code": "BR",
+      "branch_name": "Rio Downtown Branch"
+    },
+    {
+      "id": 9,
+      "country": "India",
+      "city": "Mumbai",
+      "country_code": "IN",
+      "branch_name": "Mumbai Financial District Branch"
+    },
+    {
+      "id": 10,
+      "country": "China",
+      "city": "Shanghai",
+      "country_code": "CN",
+      "branch_name": "Shanghai Financial Center Branch"
+    }
+  ]
+  

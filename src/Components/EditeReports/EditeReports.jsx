@@ -8,7 +8,7 @@ const EditeReports = () => {
     const data = useLoaderData();
     const {client_name, tests, gender, age, phone, date, status} = data;
   const navigate = useNavigate();
-  const invoiceData = [
+  const reportData = [
     { label: "Name:", value: client_name },
     { label: "Test:", value: tests.join(", ") },
     { label: "Gender:", value: gender },
@@ -22,7 +22,7 @@ const EditeReports = () => {
 
         {/* invoice details */}
       <ul className="shadow-md p-4 w-full mt-5 space-y-1 rounded-md">
-        {invoiceData.map((item, index) => (
+        {reportData.map((item, index) => (
           <li key={index} className="text-[18px] font-medium text-gray-600">
             <span className="text-primary">{item.label}</span> {item.value}
           </li>
