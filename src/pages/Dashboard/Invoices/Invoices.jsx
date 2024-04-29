@@ -2,18 +2,19 @@ import { IoSearchSharp } from "react-icons/io5";
 import fakeData from "../../../../public/invoices.json";
 import Invoice from "./Invoice";
 import { IoMdCreate } from "react-icons/io";
+import { Link } from "react-router-dom";
 const Invoices = () => {
   return (
-    <section className="mx-3 mt-3 border rounded-md p-3">
+    <section className="mx-3 mt-3 border rounded-md p-3 bg-white">
       {/* table header */}
       <div className="flex w-f justify-between">
         <h2 className="text-2xl font-semibold border-b border-primary">
           <span className="text-primary">Invoices</span> Table
         </h2>
-        <button className="btn bg-primary hover:bg-blue-800 text-white text-[18px]">
+        <Link to={"/dashboard/create-invoice"} className="btn bg-primary hover:bg-blue-800 text-white text-[18px]">
           <IoMdCreate />
           Create
-        </button>
+        </Link>
       </div>
       <hr className="my-3" />
       {/* search & page count */}

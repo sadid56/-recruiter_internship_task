@@ -6,6 +6,9 @@ import Invoices from "../pages/Dashboard/Invoices/Invoices";
 import Reports from "../pages/Dashboard/Reports/Reports";
 import EditeProfile from "../Components/EditProfile/EditeProfile";
 import InvoiceEdite from "../Components/InvoiceEdite/InvoiceEdite";
+import CreateInvoices from "../Components/CreateInvoices/CreateInvoices";
+import EditeReports from "../Components/EditeReports/EditeReports";
+import CreateReport from "../Components/CreateReport/CreateReport";
 
 
 const Router = createBrowserRouter([
@@ -50,6 +53,32 @@ const Router = createBrowserRouter([
                       return null; 
                     });
                 }
+              },
+              {
+                path:"/dashboard/create-invoice",
+                element:<CreateInvoices/>
+              },
+              {
+                path:"/dashboard/edit-report/:name",
+                element: <EditeReports/>,
+                loader: ({ params }) => {
+                    // Fetch the JSON data
+                    return fetch(`/reports.json`)
+                      .then(response => response.json())
+                      .then(data => {
+                        // Find the invoice with the provided ID
+                        const reports = data.find(reports => reports.client_name === params.name);
+                        return reports;
+                      })
+                      .catch(error => {
+                        console.error('Error fetching reports:', error);
+                        return null; 
+                      });
+                  }
+              },
+              {
+                path:"/dashboard/create-report",
+                element:<CreateReport/>
               }
               
         ]
