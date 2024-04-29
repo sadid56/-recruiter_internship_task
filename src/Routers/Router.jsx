@@ -24,6 +24,9 @@ import UpdateCultureOption from "../Components/UpdateCultureOption/UpdateCulture
 import Antibiotics from "../pages/Dashboard/Antibiotics/Antibiotics";
 import CreateAntibiotics from "../Components/CreateAntibiotics/CreateAntibiotics";
 import UpdateAntibiotic from "../Components/UpdateAntibiotic/UpdateAntibiotic";
+import Doctors from "../pages/Dashboard/Doctor/Doctors";
+import AddDoctor from "../Components/AddDoctor/AddDoctor";
+import UpdateDoctor from "../Components/UpdateDoctor/UpdateDoctor";
 
 const Router = createBrowserRouter([
   {
@@ -231,6 +234,33 @@ const Router = createBrowserRouter([
             });
         },
       },
+      {
+        path:'/dashboard/doctor',
+        element:<Doctors/>
+      },
+      {
+        path:"/dashboard/add-doctor",
+        element:<AddDoctor/>
+      },
+      {
+        path: "/dashboard/update-doctor/:name",
+        element: <UpdateDoctor />,
+        loader: ({ params }) => {
+          // Fetch the JSON data
+          return fetch(`/doctors.json`)
+            .then((response) => response.json())
+            .then((data) => {
+              const doctor = data.find(
+                (doctor) => doctor.name === params.name
+              );
+              return doctor;
+            })
+            .catch((error) => {
+              console.error("Error fetching doctor:", error);
+              return null;
+            });
+        },
+      }
     ],
   },
 ]);

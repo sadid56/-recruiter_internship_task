@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "name": "Dr. John Smith",
+        "email": "john.smith@example.com",
+        "address": "123 Main Street, Anytown, USA",
+        "commission": 0.15,
+        "monthly_salary": 8000,
+        "paid": true,
+        "phone": "+1 (555) 123-4567"
+    },
+    {
+        "id": 2,
+        "name": "Dr. Sarah Johnson",
+        "email": "sarah.johnson@example.com",
+        "address": "456 Elm Street, Anycity, USA",
+        "commission": 0.12,
+        "monthly_salary": 7500,
+        "paid": false,
+        "phone": "+1 (555) 987-6543"
+    },
+    {
+        "id": 3,
+        "name": "Dr. Michael Williams",
+        "email": "michael.williams@example.com",
+        "address": "789 Oak Avenue, Anystate, USA",
+        "commission": 0.18,
+        "monthly_salary": 8200,
+        "paid": true,
+        "phone": "+1 (555) 111-2222"
+    },
+    {
+        "id": 4,
+        "name": "Dr. Emily Brown",
+        "email": "emily.brown@example.com",
+        "address": "101 Pine Street, Anyvillage, USA",
+        "commission": 0.13,
+        "monthly_salary": 7800,
+        "paid": false,
+        "phone": "+1 (555) 333-4444"
+    },
+    {
+        "id": 5,
+        "name": "Dr. David Miller",
+        "email": "david.miller@example.com",
+        "address": "321 Maple Drive, Anysuburb, USA",
+        "commission": 0.16,
+        "monthly_salary": 7900,
+        "paid": true,
+        "phone": "+1 (555) 555-5555"
+    },
+    {
+        "id": 6,
+        "name": "Dr. Jennifer Davis",
+        "email": "jennifer.davis@example.com",
+        "address": "654 Birch Lane, Anyside, USA",
+        "commission": 0.14,
+        "monthly_salary": 7700,
+        "paid": false,
+        "phone": "+1 (555) 666-7777"
+    },
+    {
+        "id": 7,
+        "name": "Dr. Robert Wilson",
+        "email": "robert.wilson@example.com",
+        "address": "987 Cedar Road, Anyplace, USA",
+        "commission": 0.17,
+        "monthly_salary": 8100,
+        "paid": true,
+        "phone": "+1 (555) 888-9999"
+    },
+    {
+        "id": 8,
+        "name": "Dr. Jessica Martinez",
+        "email": "jessica.martinez@example.com",
+        "address": "246 Walnut Street, Anyhamlet, USA",
+        "commission": 0.11,
+        "monthly_salary": 7600,
+        "paid": false,
+        "phone": "+1 (555) 111-3333"
+    },
+    {
+        "id": 9,
+        "name": "Dr. Christopher Taylor",
+        "email": "christopher.taylor@example.com",
+        "address": "369 Pineapple Avenue, Anyhammock, USA",
+        "commission": 0.19,
+        "monthly_salary": 8300,
+        "paid": true,
+        "phone": "+1 (555) 222-4444"
+    },
+    {
+        "id": 10,
+        "name": "Dr. Amanda Anderson",
+        "email": "amanda.anderson@example.com",
+        "address": "753 Cherry Street, Anyneighborhood, USA",
+        "commission": 0.10,
+        "monthly_salary": 7400,
+        "paid": false,
+        "phone": "+1 (555) 333-5555"
+    }
+]
