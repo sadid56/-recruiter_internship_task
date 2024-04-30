@@ -29,11 +29,13 @@ import AddDoctor from "../Components/AddDoctor/AddDoctor";
 import UpdateDoctor from "../Components/UpdateDoctor/UpdateDoctor";
 import ListTests from "../pages/Dashboard/listTest/ListTests";
 import ListCulture from "../pages/Dashboard/listCulture/ListCulture";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const Router = createBrowserRouter([
   {
     path: "/",
     element: <LoginPage />,
+    errorElement:<ErrorPage/>,
   },
   {
     path: "/dashboard",
