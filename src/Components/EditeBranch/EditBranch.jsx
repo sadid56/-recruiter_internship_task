@@ -20,6 +20,7 @@ const EditBranch = () => {
         <div className="mx-5">
         {/* branch details */}
       <ul className="shadow-md p-4 w-full mt-5 space-y-1 rounded-md">
+      <h1 className="text-2xl font-semibold border-b border-primary w-fit mb-3">Current <span className="text-primary">Branch</span></h1>
         {BranchData.map((item, index) => (
           <li key={index} className="text-[18px] font-medium text-gray-600">
             <span className="text-primary">{item.label}</span> {item.value}

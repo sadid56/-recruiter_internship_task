@@ -1,31 +1,26 @@
 import { IoMdCreate } from "react-icons/io";
-import { IoSearchSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import fakeData from "../../../../public/reports.json";
 import Report from "./Report";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { FaFilter } from "react-icons/fa";
+import PageCount from "../../../shared/PageCount/PageCount";
+import Pagination from "../../../shared/Pagination/Pagination";
+import useClickOutside from "../../../Hooks/useClickOutSide";
 
 const Reports = () => {
   const [isToggle, setIsToggle] = useState(false);
   const dropdownRef = useRef(null);
+  const handleClickOutside = () => {
+    setIsToggle(false);
+  };
+  useClickOutside(dropdownRef, handleClickOutside);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsToggle(false);
-      }
-    };
-    window.addEventListener("click", handleClickOutside);
-    return () => {
-      window.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
   return (
     <section className="mx-3 mt-3 border rounded-md p-3 bg-white">
       {/* table header */}
-      <div className="flex w-f justify-between">
-        <h2 className="text-2xl font-semibold border-b border-primary">
+      <div className="flex flex-col md:flex-row gap-5 justify-between">
+        <h2 className="text-2xl font-semibold border-b w-fit border-primary">
           <span className="text-primary">Reports</span> Table
         </h2>
 
@@ -73,18 +68,8 @@ const Reports = () => {
         </div>
       </div>
       <hr className="my-3" />
-      {/* search & page count */}
-      <div className="flex w-full justify-between items-center">
-        <label className="input input-bordered flex items-center gap-2 max-w-xs">
-          <input type="text" className="grow" placeholder="Search reports..." />
-          <IoSearchSharp />
-        </label>
-        <select className="select select-bordered w-full max-w-[100px]">
-          <option selected>5</option>
-          <option>10</option>
-          <option>20</option>
-        </select>
-      </div>
+      {/* page count */}
+      <PageCount/>
       <hr className="my-3 " />
       <div className="overflow-x-auto  rounded-md">
         <table className="table ">
@@ -109,17 +94,7 @@ const Reports = () => {
         </table>
 
         {/* pagination */}
-        <div className="w-ful flex justify-center">
-          <div className="join border rounded-none my-5">
-            <button className="join-item btn">«</button>
-            <button className="join-item btn bg-primary text-white rounded-md">
-              1
-            </button>
-            <button className="join-item btn">2</button>
-            <button className="join-item btn">3</button>
-            <button className="join-item btn">»</button>
-          </div>
-        </div>
+        <Pagination/>
       </div>
     </section>
   );

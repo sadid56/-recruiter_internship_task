@@ -1,36 +1,29 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 import { MdOutlineDone } from "react-icons/md";
 import { VscError } from "react-icons/vsc";
 import { Link } from "react-router-dom";
+import useClickOutside from "../../../Hooks/useClickOutSide";
 
 const Report = ({i, report}) => {
     const {client_name, tests, gender, age, phone, date, status} = report;
     const [isToggle, setIsToggle] = useState(false);
     const dropdownRef = useRef(null);
-  
-    useEffect(() => {
-      const handleClickOutside = (event) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-          setIsToggle(false);
-        }
-      };
-      window.addEventListener("click", handleClickOutside);
-      return () => {
-        window.removeEventListener("click", handleClickOutside);
-      };
-    }, []);
+    const handleClickOutside = () => {
+      setIsToggle(false);
+    };
+    useClickOutside(dropdownRef, handleClickOutside);
     return (
-        <tr>
-      <th>{i + 1}</th>
-      <td>{client_name}</td>
-      <td>{gender}</td>
-      <td>{age}</td>
-      <td>{phone}</td>
-      <td><ul>{tests?.map((test,i)=><li key={i}>{i + 1}. {test}</li>)}</ul></td>
-      <td>{date}</td>
-      <td>
+        <tr className="hover:bg-gray-200 rounded-md border-b border-gray-200 cursor-pointer">
+      <th className="border-r border-gray-200">{i + 1}</th>
+      <td className="border-r border-gray-200">{client_name}</td>
+      <td className="border-r border-gray-200">{gender}</td>
+      <td className="border-r border-gray-200">{age}</td>
+      <td className="border-r border-gray-200">{phone}</td>
+      <td className="border-r border-gray-200"><ul>{tests?.map((test,i)=><li key={i}>{i + 1}. {test}</li>)}</ul></td>
+      <td className="border-r border-gray-200">{date}</td>
+      <td className="border-r border-gray-200">
         {status === "Success" ? (
           <MdOutlineDone className="text-xl text-green-600" />
         ) : (

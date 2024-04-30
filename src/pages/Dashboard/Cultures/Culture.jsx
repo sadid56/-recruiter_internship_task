@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import useClickOutside from "../../../Hooks/useClickOutSide";
 
 
 const Culture = ({culture, i}) => {
@@ -9,23 +10,16 @@ const Culture = ({culture, i}) => {
     const [isToggle, setIsToggle] = useState(false);
     const dropdownRef = useRef(null);
   
-    useEffect(() => {
-      const handleClickOutside = (event) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-          setIsToggle(false);
-        }
-      };
-      window.addEventListener("click", handleClickOutside);
-      return () => {
-        window.removeEventListener("click", handleClickOutside);
-      };
-    }, []);
+    const handleClickOutside = () => {
+      setIsToggle(false);
+    };
+    useClickOutside(dropdownRef, handleClickOutside);
     return (
-        <tr>
-        <th>{i + 1}</th>
-        <td>{name}</td>
-        <td>{sample_type}</td>
-        <td>{price}</td>
+        <tr className="hover:bg-gray-200 rounded-md border-b border-gray-200 cursor-pointer">
+        <th className="border-r border-gray-200">{i + 1}</th>
+        <td className="border-r border-gray-200">{name}</td>
+        <td className="border-r border-gray-200">{sample_type}</td>
+        <td className="border-r border-gray-200">{price}</td>
         <td>
           <div ref={dropdownRef} className="dropdown dropdown-end">
             <button

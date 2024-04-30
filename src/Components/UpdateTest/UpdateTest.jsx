@@ -14,8 +14,9 @@ const UpdateTest = () => {
   ];
     return (
         <div className="mx-5">
-        {/* invoice details */}
+        {/* test details */}
       <ul className="shadow-md p-4 w-full mt-5 space-y-1 rounded-md">
+      <h1 className="text-2xl font-semibold border-b border-primary w-fit mb-3">Current <span className="text-primary">Test</span></h1>
         {testData.map((item, index) => (
           <li key={index} className="text-[18px] font-medium text-gray-600">
             <span className="text-primary">{item.label}</span> {item.value}

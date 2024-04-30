@@ -1,36 +1,29 @@
 /* eslint-disable react/prop-types */
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 import { MdOutlineDone } from "react-icons/md";
 import { VscError } from "react-icons/vsc";
 import { Link } from "react-router-dom";
+import useClickOutside from "../../../Hooks/useClickOutSide";
 
 const Invoice = ({ invoice, i }) => {
   const { id, client_name, discount, total, paid, date, status } = invoice;
   const [isToggle, setIsToggle] = useState(false);
   const dropdownRef = useRef(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsToggle(false);
-      }
-    };
-    window.addEventListener("click", handleClickOutside);
-    return () => {
-      window.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
+  const handleClickOutside = () => {
+    setIsToggle(false);
+  };
+  useClickOutside(dropdownRef, handleClickOutside);
 
   return (
-    <tr>
-      <th>{i + 1}</th>
-      <td>{client_name}</td>
-      <td>{total} BDT</td>
-      <td>{discount} BDT</td>
-      <td>{paid} BDT</td>
-      <td>{date}</td>
-      <td>
+    <tr className="hover:bg-gray-200 rounded-md border-b border-gray-200 cursor-pointer">
+      <th className="border-r border-gray-200">{i + 1}</th>
+      <td className="border-r border-gray-200">{client_name}</td>
+      <td className="border-r border-gray-200">{total} BDT</td>
+      <td className="border-r border-gray-200">{discount} BDT</td>
+      <td className="border-r border-gray-200">{paid} BDT</td>
+      <td className="border-r border-gray-200">{date}</td>
+      <td className="border-r border-gray-200">
         {status === "Success" ? (
           <MdOutlineDone className="text-xl text-green-600" />
         ) : (
