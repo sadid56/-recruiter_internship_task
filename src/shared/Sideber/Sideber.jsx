@@ -18,7 +18,7 @@ import SidebarDropdown from "./SideberDropDown";
 const Sideber = ({ isToggle, isHover, setIsToggle }) => {
   const [isTrue, setIsTrue] = useState(false);
   return (
-    <div className="p-2 z-50 overflow-y-scroll">
+    <div className="p-2">
       {/* company name and bars */}
       <div className="flex w-full justify-between pl-3">
         <img

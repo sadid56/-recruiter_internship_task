@@ -23,7 +23,7 @@ const Navber = () => {
             <input
               type="search"
               id="default-search"
-              className="block w-full p-2 md:p-3 ps-3 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 outline-none"
+              className="block w-full p-2 md:p-3 ps-3 text-sm text-gray-300 border border-slate-400 rounded-lg bg-transparent focus:ring-blue-500 focus:border-blue-500 outline-none"
               placeholder="Search Anything..."
               required
             />
@@ -33,16 +33,16 @@ const Navber = () => {
 
       {/* navber right side content */}
       <div className="flex items-center gap-0 md:gap-6 mr-0 md:mr-5">
-        <Link className="text-2xl relative">
+        <Link className="text-2xl relative text-white">
           <IoIosNotifications />
           <div className="absolute w-2 h-2 rounded-full  bg-red-600 top-0 right-0"></div>
         </Link>
         <ul className="menu menu-horizontal ">
-          <li>
+          <li className="text-white">
             <details>
               <summary>
                 <div className="avatar">
-                  <div className="w-8 rounded-full">
+                  <div className="w-8 rounded-full border border-primary">
                     <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                   </div>
                 </div>
@@ -61,7 +61,7 @@ const Navber = () => {
             </details>
           </li>
         </ul>
-        <Link className="text-xl">
+        <Link className="text-xl text-white">
           <IoSettings />
         </Link>
       </div>
