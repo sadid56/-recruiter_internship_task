@@ -11,9 +11,9 @@ const Profile = () => {
     { label: "DOB", value: "11-25-2003" },
   ];
   return (
-    <div className="mt-5 flex flex-col md:flex-row items-center justify-evenly mx-3 shadow-md p-5 rounded-md gap-5">
+    <div className="mt-5 flex flex-col md:flex-row items-center justify-evenly mx-3 shadow-md p-5 rounded-md gap-5 bg-white">
         {/* user profile image */}
-      <div className="profile-card relative">
+      <div className="profile-card relative ">
         <img
           className="object-cover w-full h-full"
           src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"

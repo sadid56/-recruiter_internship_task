@@ -1,40 +1,22 @@
 /* eslint-disable react/prop-types */
 // Sideber.js
-import { Link, NavLink } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 import { TbReportSearch } from "react-icons/tb";
 import logo from "../../assets/logo/logo-dark.png";
 import favIcon from "../../assets/logo/favicon.ico";
-import { FaBars, FaCaretDown, FaCaretLeft, FaCodeBranch } from "react-icons/fa";
+import { FaBars, FaCodeBranch } from "react-icons/fa";
 import { BsStack } from "react-icons/bs";
 import { GrTest } from "react-icons/gr";
 import { LuTestTube2, LuTestTubes } from "react-icons/lu";
 import { RiTestTubeFill } from "react-icons/ri";
-import { FaRegCircleDot, FaUserDoctor } from "react-icons/fa6";
-import { IoPricetagsSharp } from "react-icons/io5";
+import { FaUserDoctor } from "react-icons/fa6";
 import { useState } from "react";
 import "./sideber.css";
-
-const SidebarItem = ({ icon, text, isToggle, isHover, path }) => {
-  // list style controler
-  return (
-    <li className="hover:bg-gray-200 p-2 rounded-md w-full">
-      <NavLink to={path} className="flex items-center gap-2">
-        {icon({
-          className: `text-[30px] p-2 bg-primary text-white rounded-md ${
-            isToggle ? "block" : ""
-          }`,
-        })}
-        <span className={`${isToggle || isHover ? "block" : "hidden"}`}>
-          {text}
-        </span>
-      </NavLink>
-    </li>
-  );
-};
+import SidebarNavItem from "./SideberNavItem";
+import SidebarDropdown from "./SideberDropDown";
 
 const Sideber = ({ isToggle, isHover, setIsToggle }) => {
-  const [isTrue, setTrue] = useState(false);
+  const [isTrue, setIsTrue] = useState(false);
   return (
     <div className="p-2 z-50 overflow-y-scroll">
       {/* company name and bars */}
@@ -54,63 +36,63 @@ const Sideber = ({ isToggle, isHover, setIsToggle }) => {
       <ul
         id="nav"
         className="mt-10 flex flex-col items-start gap-1 text-[18px] font-semibold">
-        <SidebarItem
+        <SidebarNavItem
           path={"/dashboard/profile"}
           icon={CgProfile}
           text="Profile"
           isToggle={isToggle}
           isHover={isHover}
         />
-        <SidebarItem
+        <SidebarNavItem
           path={"/dashboard/invoices"}
           icon={BsStack}
           text="Invoices"
           isToggle={isToggle}
           isHover={isHover}
         />
-        <SidebarItem
+        <SidebarNavItem
           path={"/dashboard/reports"}
           icon={TbReportSearch}
           text="Reports"
           isToggle={isToggle}
           isHover={isHover}
         />
-        <SidebarItem
+        <SidebarNavItem
           path={"/dashboard/branches"}
           icon={FaCodeBranch}
           text="Branches"
           isToggle={isToggle}
           isHover={isHover}
         />
-        <SidebarItem
+        <SidebarNavItem
           path={"/dashboard/tests"}
           icon={GrTest}
           text="Tests"
           isToggle={isToggle}
           isHover={isHover}
         />
-        <SidebarItem
+        <SidebarNavItem
           path={"/dashboard/cultures"}
           icon={LuTestTube2}
           text="Cultures"
           isToggle={isToggle}
           isHover={isHover}
         />
-        <SidebarItem
+        <SidebarNavItem
           path={"/dashboard/culture-options"}
           icon={RiTestTubeFill}
           text="Culture Opotions"
           isToggle={isToggle}
           isHover={isHover}
         />
-        <SidebarItem
+        <SidebarNavItem
           path={"/dashboard/antibiotics"}
           icon={LuTestTubes}
           text="Antibiotics"
           isToggle={isToggle}
           isHover={isHover}
         />
-        <SidebarItem
+        <SidebarNavItem
           path={"/dashboard/doctor"}
           icon={FaUserDoctor}
           text="Doctor"
@@ -118,51 +100,13 @@ const Sideber = ({ isToggle, isHover, setIsToggle }) => {
           isHover={isHover}
         />
 
-        {/* drop down menu */}
-        <li
-          onClick={() => setTrue(!isTrue)}
-          className="hover:bg-gray-200 rounded-md p-2 w-full relative">
-          <button className="flex items-center gap-2">
-            <IoPricetagsSharp
-              className={`text-[30px] p-2 bg-primary text-white rounded-md ${
-                isToggle ? "block" : ""
-              }`}
-            />
-            <span className={`${isToggle || isHover ? "block" : "hidden"}`}>
-              Price List
-            </span>{" "}
-            <span className={`${isToggle || isHover ? "block" : "hidden"}`}>
-              {isTrue ? <FaCaretDown /> : <FaCaretLeft />}
-            </span>
-          </button>
-          <ul
-            className={`${
-              isTrue
-                ? "block absolute top-10 transition-all duration-500 bg-gray-100 w-full rounded-md space-y-1"
-                : "hidden"
-            }  `}>
-            <li>
-              <Link
-                to={"/dashboard/list-test"}
-                className="flex items-center gap-1 hover:bg-gray-300 p-2 rounded-md">
-                <FaRegCircleDot />{" "}
-                <span className={`${isToggle || isHover ? "block" : "hidden"}`}>
-                  Test
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to={"/dashboard/list-culture"}
-                className="flex items-center gap-1 hover:bg-gray-300 p-2 rounded-md">
-                <FaRegCircleDot />{" "}
-                <span className={`${isToggle || isHover ? "block" : "hidden"}`}>
-                  Culture
-                </span>
-              </Link>
-            </li>
-          </ul>
-        </li>
+        {/* list drop down menu */}
+        <SidebarDropdown
+          isTrue={isTrue}
+          setIsTrue={setIsTrue}
+          isToggle={isToggle}
+          isHover={isHover}
+        />
       </ul>
     </div>
   );

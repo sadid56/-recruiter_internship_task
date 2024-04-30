@@ -26,7 +26,7 @@ const DashboardLayout = () => {
       // style={{boxShadow:"0px 0px 20px "}}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className={`bg-white shadow-md h-screen overflow-y-auto block fixed md:sticky top-0 ${
+        className={`bg-white z-50 shadow-md h-screen overflow-y-auto block fixed md:sticky top-0 ${
           isToggle || isHover
             ? "w-80 "
             : " w-fit hidden md:block  left-0 transition-all duration-300"
