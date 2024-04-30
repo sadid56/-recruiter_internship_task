@@ -27,6 +27,8 @@ import UpdateAntibiotic from "../Components/UpdateAntibiotic/UpdateAntibiotic";
 import Doctors from "../pages/Dashboard/Doctor/Doctors";
 import AddDoctor from "../Components/AddDoctor/AddDoctor";
 import UpdateDoctor from "../Components/UpdateDoctor/UpdateDoctor";
+import ListTests from "../pages/Dashboard/listTest/ListTests";
+import ListCulture from "../pages/Dashboard/listCulture/ListCulture";
 
 const Router = createBrowserRouter([
   {
@@ -38,9 +40,14 @@ const Router = createBrowserRouter([
     element: <DashboardLayout />,
     children: [
       {
-        path: "/dashboard",
+        path: "/dashboard/profile",
         element: <Profile />,
       },
+      {
+        path: "/dashboard/edit-profile",
+        element: <EditeProfile />,
+      },
+      //! invoice related
       {
         path: "/dashboard/invoices",
         element: <Invoices />,
@@ -49,10 +56,7 @@ const Router = createBrowserRouter([
         path: "/dashboard/reports",
         element: <Reports />,
       },
-      {
-        path: "/dashboard/edit-profile",
-        element: <EditeProfile />,
-      },
+      
       {
         path: "/dashboard/invoice-edit/:id",
         element: <InvoiceEdite />,
@@ -95,10 +99,14 @@ const Router = createBrowserRouter([
             });
         },
       },
+
+      //! reports layout
       {
         path: "/dashboard/create-report",
         element: <CreateReport />,
       },
+
+      //! branches  layout
       {
         path: "/dashboard/branches",
         element: <Branches />,
@@ -126,6 +134,7 @@ const Router = createBrowserRouter([
             });
         },
       },
+      // tests layout
       {
         path: "/dashboard/tests",
         element: <Tests />,
@@ -153,6 +162,8 @@ const Router = createBrowserRouter([
             });
         },
       },
+
+      // culture layout
       {
         path: "/dashboard/cultures",
         element: <Cultures />,
@@ -207,6 +218,8 @@ const Router = createBrowserRouter([
             });
         },
       },
+
+      // antibiotics layout
       {
         path: "/dashboard/antibiotics",
         element: <Antibiotics />,
@@ -234,6 +247,8 @@ const Router = createBrowserRouter([
             });
         },
       },
+
+      // doctor layout
       {
         path:'/dashboard/doctor',
         element:<Doctors/>
@@ -260,6 +275,16 @@ const Router = createBrowserRouter([
               return null;
             });
         },
+      },
+
+      // list layout
+      {
+        path:"/dashboard/list-test",
+        element:<ListTests/>
+      },
+      {
+        path:"/dashboard/list-culture",
+        element:<ListCulture/>
       }
     ],
   },

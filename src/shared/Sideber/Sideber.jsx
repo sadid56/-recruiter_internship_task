@@ -13,13 +13,13 @@ import { RiTestTubeFill } from "react-icons/ri";
 import { FaRegCircleDot, FaUserDoctor } from "react-icons/fa6";
 import { IoPricetagsSharp } from "react-icons/io5";
 import { useState } from "react";
-import "./sideber.css"
+import "./sideber.css";
 
 const SidebarItem = ({ icon, text, isToggle, isHover, path }) => {
   // list style controler
   return (
-    <li  className="hover:bg-gray-200 p-2 rounded-md w-full">
-      <NavLink  to={path} className="flex items-center gap-2">
+    <li className="hover:bg-gray-200 p-2 rounded-md w-full">
+      <NavLink to={path} className="flex items-center gap-2">
         {icon({
           className: `text-[30px] p-2 bg-primary text-white rounded-md ${
             isToggle ? "block" : ""
@@ -51,9 +51,11 @@ const Sideber = ({ isToggle, isHover, setIsToggle }) => {
         </button>
       </div>
       {/* list */}
-      <ul id="nav"  className="mt-10 flex flex-col items-start gap-1 text-[18px] font-semibold">
+      <ul
+        id="nav"
+        className="mt-10 flex flex-col items-start gap-1 text-[18px] font-semibold">
         <SidebarItem
-          path={"/dashboard"}
+          path={"/dashboard/profile"}
           icon={CgProfile}
           text="Profile"
           isToggle={isToggle}
@@ -129,7 +131,9 @@ const Sideber = ({ isToggle, isHover, setIsToggle }) => {
             <span className={`${isToggle || isHover ? "block" : "hidden"}`}>
               Price List
             </span>{" "}
-            <span className={`${isToggle || isHover ? "block" : "hidden"}`}>{isTrue ? <FaCaretDown /> : <FaCaretLeft />}</span>
+            <span className={`${isToggle || isHover ? "block" : "hidden"}`}>
+              {isTrue ? <FaCaretDown /> : <FaCaretLeft />}
+            </span>
           </button>
           <ul
             className={`${
@@ -138,13 +142,23 @@ const Sideber = ({ isToggle, isHover, setIsToggle }) => {
                 : "hidden"
             }  `}>
             <li>
-              <Link className="flex items-center gap-1 hover:bg-gray-300 p-2 rounded-md">
-                <FaRegCircleDot /> <span className={`${isToggle || isHover ? "block" : "hidden"}`}>Test</span>
+              <Link
+                to={"/dashboard/list-test"}
+                className="flex items-center gap-1 hover:bg-gray-300 p-2 rounded-md">
+                <FaRegCircleDot />{" "}
+                <span className={`${isToggle || isHover ? "block" : "hidden"}`}>
+                  Test
+                </span>
               </Link>
             </li>
             <li>
-              <Link className="flex items-center gap-1 hover:bg-gray-300 p-2 rounded-md">
-                <FaRegCircleDot /> <span className={`${isToggle || isHover ? "block" : "hidden"}`}>Culture</span>
+              <Link
+                to={"/dashboard/list-culture"}
+                className="flex items-center gap-1 hover:bg-gray-300 p-2 rounded-md">
+                <FaRegCircleDot />{" "}
+                <span className={`${isToggle || isHover ? "block" : "hidden"}`}>
+                  Culture
+                </span>
               </Link>
             </li>
           </ul>
